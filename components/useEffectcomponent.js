@@ -9,15 +9,13 @@ const UseEffectComponent=()=> {
   const [message, setMessage] = useState('');
   const serv = new HttpService();
 
-  useEffect(()=>{
-     serv.getProducs().then((resp)=>{
-        console.log(`Data = ${JSON.stringify(resp.data)}`);
-         updateProduct([...products, resp.data]);
-         setMessage(`Success ${message}`);
-     }).catch((err)=>{
-        setMessage(`Faild ${message}`);
-     });
-  },[products]);
+  useEffect(() => {
+    (async () => {
+      const data = await serv.getProducs();
+      console.log(`Call Success ${JSON.stringify(data.data)}`);
+      updateProduct(data.data);
+    })();
+  },[]);
 
   const ListRecords=()=>{
     if(products.length === 0 || products === undefined){
@@ -30,6 +28,7 @@ const UseEffectComponent=()=> {
     } else {
         return(
             <View>
+                <Text>Success</Text>
                 <Text>
                     {products[0].ProductId}
                 </Text>
@@ -43,7 +42,7 @@ const UseEffectComponent=()=> {
   return (
     <View style={styles.view}>
         <Text style={styles.text}>Receiving the Data from External Service</Text>
-        {/* <ListRecords/> */}
+        <ListRecords/>
     </View>
     
   );
