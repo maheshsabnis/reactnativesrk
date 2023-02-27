@@ -1,0 +1,63 @@
+# npx create-expo-app AwesomeProject
+
+- package.json
+    - NPM Init file 
+    - Load and manage all depdencies
+
+    - React 16+
+        - Hooks
+            - const [x, setX] = useState(0);
+                - useState is a function thatn is invoked at functional component level only
+                    - It cannot be called inside other function in the component
+               - useState(): State Object Definitaion and Mutation
+               - useEffect(): Performing Resourecv Oriented Operations
+                            :  Watching the State updated and Render changes
+               - useContext(): Sharing data cross Components
+               - useCallback(): Used for making sura that the callback is invoked without remounting the component      
+               - useRef(): Invoking a rendered component as well as its function
+               - useMemo(): Optimization for states                 
+        - Rendering Optimization
+            - Frabic by Reat NAtive
+
+# React-Native App Development (ES 6+)
+    - COmponents
+        - State?
+            - Immutable State
+                - Data is Available across Components (Parent-to-Child and Child-to-Parent)
+                    - 'props' OR an JSON Object
+            - Mutatble State
+                - Local to Component
+                    - useState
+    - Important New Components
+        - FlatList
+            - OnRefresh()   
+                - SYnc up with Gestures
+                    - Update itself based on the timebased data received from the External Service
+                - useEffects()
+                    - Hook 
+                    - Executed when the Component is Mounted
+                        - useEffect(mountCallback, return unMountCallbak, [DEPENDENCY-WATCHER])  
+                            - mountCallback: a function tat will be executed whrn the component is mounted
+                                - Update the DOM based on State Updates
+                                - Monitor the DOM updates and once they are done, the Rendering is stopped
+                            - unMountCallbak : a function thatn is executed when the component is unloaded / unMOunted
+                            - DEPENDENCY-WATCHER: This will maske sure that when the DOM is completed with its execution, the useEffect() will staop  
+    - Gestures
+    - Redux
+        - Fundamentals
+            - Arrow Operators
+                - =>
+                - `${abc}`
+                - ...
+                - let
+        - Without Middlewares aka UI Only
+        - Sagas
+            - Read about Generators
+                - function* MyGenerator(){  yield  }
+    - Cloud Integration Services
+        - API Access
+        - Firebase Services
+            - OTP
+            - Notification
+            - Security
+    - Display Control            
